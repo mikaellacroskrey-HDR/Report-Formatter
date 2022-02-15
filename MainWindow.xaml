@@ -1,0 +1,147 @@
+﻿<Window x:Class="ReportHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReportHelper"
+        xmlns:models="clr-namespace:ReportHelper.Models"
+        mc:Ignorable="d"
+        Title="Report Helper" Height="200" Width="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Name="lblFile" 
+                   Grid.Column="0"
+                   Content="Select a file:"></Label>
+            <TextBox Name="txtBoxFilePath"
+                     Grid.Column="1"
+                     Margin="2"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Center"
+                     TextAlignment="Left"
+                     TextChanged="txtBoxFilePath_TextChanged"></TextBox>
+            <Button Name="btnBrowse"
+                    Margin="2.5"
+                    Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Content="Browse"
+                    Click="btnBrowse_Click"></Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Name="lblStartDate" 
+                   Content="Start Time:"
+                   Grid.Column="0"></Label>
+            <ComboBox Name="cbStartTime"
+                      Grid.Column="1"
+                      Margin="2"
+                      SelectionChanged="cbStartTime_SelectionChanged"></ComboBox>
+            <Label Name="lblEndDate" 
+                   Content="End Time:"
+                   Grid.Column="2"></Label>
+            <ComboBox Name="cbEndTime"
+                      Grid.Column="3"
+                      Margin="2"
+                      SelectionChanged="cbEndTime_SelectionChanged"></ComboBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Name="chkBoxNameTemplate" 
+                      Grid.Column="0" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Click="chkBoxNameTemplate_Click"></CheckBox>
+
+            <Label Name="lblNameTemplate"
+                   Content="Apply burn naming convention"
+                   Grid.Column="1"></Label>
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Name="chkBoxForceIntervals" 
+                      Grid.Column="0" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Click="chkBoxForceIntervals_Click"></CheckBox>
+
+            <Label Name="lblForceIntervals"
+                   Content="Force 15 minutes increments to 5 minutes"
+                   Grid.Column="1"></Label>
+
+        </Grid>
+        
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox Name="chkBoxRunFolder" 
+                      Grid.Column="0" 
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      Click="chkBoxRunFolder_Click"></CheckBox>
+
+            <Label Name="lblRunFolder"
+                   Content="Run on all files in folder"
+                   Grid.Column="1"></Label>
+
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnRun"
+                    Margin="2.5"
+                    Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Content="Run"
+                    Click="btnRun_Click"></Button>
+
+            <Button Name="btnCancel"
+                    Margin="2.5"
+                    Grid.Column="3"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Content="Cancel"
+                    Click="btnCancel_Click"></Button>
+        </Grid>
+    </Grid>
+</Window>
