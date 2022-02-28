@@ -12,7 +12,7 @@
 <!-- * [License](#license) -->
 
 ## General Information
--  This is a painfully simple application to reduce the agonizing hours spend copy and pasting out of .csv files.
+-  This is a simple application to reduce the agonizing hours spent copying and pasting out of .csv files.
 
 ## Technologies Used
 - WPF
